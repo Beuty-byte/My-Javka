@@ -8,9 +8,11 @@ import java.io.ObjectOutputStream;
 public class SerializationMain {
     public static void main(String[] args) {
 
-        try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("out.dat"))){
+        try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("data/out.dat"))){
 
-            
+        StudentForSerialization student = new StudentForSerialization("Andrei",14,"greee");
+        //StudentForSerialization student2 = new StudentForSerialization("Sergei",11,"greee1");
+        output.writeObject(student);
 
         }catch (IOException e) {
             e.printStackTrace();
